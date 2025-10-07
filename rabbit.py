@@ -16,8 +16,6 @@ def print_message_sum(ch, method, properties, body):
 #    channel.basic_publish(exchange='bank_ex', routing_key='avto', body='test123')
 
 
-channel.basic_consume(queue='avto_credit_log', on_message_callback=print_message_sum, auto_ack=True)
+channel.basic_consume(queue='avto_credit', on_message_callback = print_message_sum, auto_ack = True)
 channel.start_consuming()
-
-
 
